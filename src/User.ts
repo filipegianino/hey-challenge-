@@ -23,7 +23,10 @@ export class User {
             this.gender = gender
         }
     
-
+    private isValidName (name: string) {
+        return name.length <= 2 && name.length <=254
+    }
+        
     SetFirstName(firstName: string) {
         if(!this.isValidName(firstName)) throw new Error ('nome invalido')
         return this.firstName;
@@ -32,9 +35,6 @@ export class User {
     SetLastName(lastName: string) {
         if(!this.isValidName(lastName)) throw new Error ('nome invalido')
         return this.lastName;
-    }
-    private isValidName (name: string) {
-        return name.length <= 2 && name.length <=254
     }
     
     GetAge (){const today = DateTime.local()
@@ -69,6 +69,5 @@ export class User {
 
     
    
-
 
 
